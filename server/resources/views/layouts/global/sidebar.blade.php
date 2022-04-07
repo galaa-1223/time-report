@@ -14,13 +14,45 @@
 						<a href="#"><img class="img-fluid" src="{{asset('assets/images/logo/logo-icon.png')}}" alt=""></a>
 						<div class="mobile-back text-end"><span>Back</span><i class="fa fa-angle-right ps-2" aria-hidden="true"></i></div>
 					</li>
-					<li class="sidebar-main-title">
-						<div>
-							<h6 class="lan-1">{{ trans('lang.General') }} </h6>
-                     		<p class="lan-2">{{ trans('lang.Dashboards,widgets & layout.') }}</p>
-						</div>
+					<li class="sidebar-list">
+						<a class="sidebar-link sidebar-title link-nav {{ Route::currentRouteName()=='file-manager' ? 'active' : '' }}" href="#">
+							<i data-feather="git-pull-request"> </i><span>Хуваарь</span>
+						</a>
 					</li>
-					<li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav {{ Route::currentRouteName() == 'knowledgebase' ? 'active' : ''}}" href="#"><i data-feather="sunrise"> </i><span>{{ trans('lang.Knowledgebase') }}</span></a></li>
+					<li class="sidebar-list">
+						<a class="sidebar-link sidebar-title link-nav {{ Route::currentRouteName()=='file-manager' ? 'active' : '' }}" href="#">
+							<i data-feather="git-pull-request"> </i><span>Ажилтанууд</span>
+						</a>
+					</li>
+					<li class="sidebar-list">
+						<a class="sidebar-link sidebar-title link-nav {{ Route::currentRouteName()=='file-manager' ? 'active' : '' }}" href="#">
+							<i data-feather="git-pull-request"> </i><span>Багш нар</span>
+						</a>
+					</li>
+					<li class="sidebar-list">
+						<a class="sidebar-link sidebar-title link-nav {{ Route::currentRouteName()=='file-manager' ? 'active' : '' }}" href="#">
+							<i data-feather="git-pull-request"> </i><span>Ангиуд</span>
+						</a>
+					</li>
+					<li class="sidebar-list">
+						<a class="sidebar-link sidebar-title link-nav {{ Route::currentRouteName()=='file-manager' ? 'active' : '' }}" href="#">
+							<i data-feather="git-pull-request"> </i><span>Оюутнууд</span>
+						</a>
+					</li>
+					<li class="sidebar-list">
+						<a class="sidebar-link sidebar-title link-nav {{ Route::currentRouteName()=='file-manager' ? 'active' : '' }}" href="#">
+							<i data-feather="git-pull-request"> </i><span>Репорт</span>
+						</a>
+					</li>
+					<li class="sidebar-list">
+						<a class="sidebar-link sidebar-title {{request()->route()->getPrefix() == '/ecommerce' ? 'active' : '' }}" href="#"><i data-feather="shopping-bag"></i><span>Тохиргоо</span>
+							<div class="according-menu"><i class="fa fa-angle-{{request()->route()->getPrefix() == '/ecommerce' ? 'down' : 'right' }}"></i></div>
+						</a>
+						<ul class="sidebar-submenu" style="display: {{request()->route()->getPrefix() == '/ecommerce' ? 'block' : 'none;' }};">
+							<li><a href="#" class="{{ Route::currentRouteName()=='product' ? 'active' : '' }}">Тохиргоо</a></li>
+	                        <li><a href="#" class="{{ Route::currentRouteName()=='product-page' ? 'active' : '' }}">Product page</a></li>
+						</ul>
+					</li>
 				</ul>
 			</div>
 			<div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>

@@ -44,8 +44,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 
     Route::group(['middleware' => ['guest']], function() {
 
-        // Route::get('/register', 'RegisterController@show')->name('register.show');
-        // Route::post('/register', 'RegisterController@register')->name('register.perform');
+        Route::get('/register', 'RegisterController@show')->name('register.show');
+        Route::post('/register', 'RegisterController@register')->name('register.perform');
 
         Route::get('/login', 'LoginController@show')->name('login');
         Route::post('/login', 'LoginController@login')->name('login.perform');
