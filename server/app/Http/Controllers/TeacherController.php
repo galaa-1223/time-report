@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+class TeacherController extends Controller
 {
     public function index()
     {

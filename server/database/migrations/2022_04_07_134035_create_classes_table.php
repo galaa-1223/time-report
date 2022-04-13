@@ -15,7 +15,15 @@ class CreateClassesTable extends Migration
     {
         Schema::create('classes', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 300);
+            $table->string('group', 3);
+            $table->integer('teacher_id');
+            $table->foreign('teacher_id')->references('id')->on('teachers')->onDelete('cascade');
+            $table->integer('total');
             $table->timestamps();
+            $table->engine = 'MyISAM';
+            $table->charset = 'utf8';
+            $table->collation = 'utf8_unicode_ci';
         });
     }
 

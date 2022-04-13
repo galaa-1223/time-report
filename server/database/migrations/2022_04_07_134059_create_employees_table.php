@@ -15,10 +15,20 @@ class CreateEmployeesTable extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->unsignedBigInteger('position_id');
-            $table->foreign('position_id')->references('id')->on('positions')->onDelete('cascade');
+            $table->string('firstname', 30);
+            $table->string('lastname', 30);
+            $table->string('position', 200);
+            $table->enum('sex', ['male', 'female'])->default('male');
+            $table->char('code', 8);
+            $table->string('password');
+            $table->string('phone', 50)->nullable();
+            $table->string('email', 50)->nullable();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('image', 200)->nullable();
             $table->timestamps();
+            $table->engine = 'MyISAM';
+            $table->charset = 'utf8';
+            $table->collation = 'utf8_unicode_ci';
         });
     }
 
