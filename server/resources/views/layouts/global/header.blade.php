@@ -40,11 +40,12 @@
             <li class="maximize">
                 <a class="text-dark" href="#!" onclick="javascript:toggleFullScreen()"><i data-feather="maximize"></i></a>
             </li>
+            @auth
             <li class="profile-nav onhover-dropdown p-0 me-0">
                 <div class="media profile-media">
                     <img class="b-r-10" src="{{asset('assets/images/dashboard/profile.jpg')}}" alt="">
                     <div class="media-body">
-                    <span>Emay Walter</span>
+                    <span>{{auth()->user()->username}}</span>
                     <p class="mb-0 font-roboto">Admin <i class="middle fa fa-angle-down"></i></p>
                     </div>
                 </div>
@@ -54,6 +55,7 @@
                     <li><a href="{{ route('logout') }}"><i data-feather="log-in"> </i><span>Гарах</span></a></li>
                 </ul>
             </li>
+            @endauth
         </ul>
         </div>
     </div>

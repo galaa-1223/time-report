@@ -41,6 +41,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
      * Home Routes
      */
     Route::get('/', 'DashboardController@index')->name('home.index');
+    Route::get('/teachers', 'TeacherController@index')->name('teachers.index');
 
     Route::group(['middleware' => ['guest']], function() {
 
